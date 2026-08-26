@@ -1,8 +1,8 @@
-import { buttonIconIconVariants, buttonIconVariants } from './button-icon.variants'
-import type { VariantProps } from 'class-variance-authority'
-import type React from 'react'
 import Icon from './icon'
+import type React from 'react'
 import Skeleton from './skeleton'
+import type { VariantProps } from 'class-variance-authority'
+import { buttonIconIconVariants, buttonIconVariants } from './button-icon.variants'
 
 interface ButtonIconProps
   extends

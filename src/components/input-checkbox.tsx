@@ -1,13 +1,13 @@
+import Icon from './icon'
+import type React from 'react'
+import Skeleton from './skeleton'
+import CheckIcon from '../assets/icons/check.svg?react'
 import { type VariantProps } from 'class-variance-authority'
 import {
   inputCheckBoxVariants,
   inputCheckBoxWrapperVariants,
   inputCheckBoxIconVariants,
 } from './input-checkbox.variants'
-import type React from 'react'
-import Icon from './icon'
-import CheckIcon from '../assets/icons/check.svg?react'
-import Skeleton from './skeleton'
 
 interface InputCheckBoxProps
   extends

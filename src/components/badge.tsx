@@ -1,8 +1,8 @@
-import { badgeSkeletonVariants, badgeTextVariants, badgeVariants } from './badge.variants'
-import { cx, type VariantProps } from 'class-variance-authority'
 import Text from './text'
 import React from 'react'
 import Skeleton from './skeleton'
+import { cx, type VariantProps } from 'class-variance-authority'
+import { badgeSkeletonVariants, badgeTextVariants, badgeVariants } from './badge.variants'
 
 interface BadgeProps extends React.ComponentProps<'div'>, VariantProps<typeof badgeVariants> {
   loading?: boolean

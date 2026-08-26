@@ -1,6 +1,6 @@
-import type { VariantProps } from 'class-variance-authority'
-import { containerVariants } from './container.variants'
 import React from 'react'
+import { containerVariants } from './container.variants'
+import type { VariantProps } from 'class-variance-authority'
 
 interface ContainerProps
   extends VariantProps<typeof containerVariants>, React.ComponentProps<'div'> {

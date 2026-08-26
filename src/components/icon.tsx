@@ -1,6 +1,6 @@
 import React from 'react'
-import { type VariantProps } from 'class-variance-authority'
 import { iconVariants } from './icon.variants'
+import { type VariantProps } from 'class-variance-authority'
 
 // Pega as propriedades do SVG e coloca dentro da interface
 

@@ -1,6 +1,6 @@
-import { type VariantProps } from 'class-variance-authority'
-import { cardVariants } from './card.variants'
 import React from 'react'
+import { cardVariants } from './card.variants'
+import { type VariantProps } from 'class-variance-authority'
 
 interface CardProps extends VariantProps<typeof cardVariants>, React.ComponentProps<'div'> {
   as?: keyof React.JSX.IntrinsicElements
