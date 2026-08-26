@@ -1,5 +1,5 @@
 import useLocalStorage from './use-local-storage'
-import { TASKS_KEY, type Task } from '../models/task'
+import { TASKS_KEY, TaskState, type Task } from '../models/task'
 
 export default function useTasks() {
   // Padrão -> chave:valor
@@ -8,7 +8,7 @@ export default function useTasks() {
 
   return {
     tasks,
-    tasksCount: tasks.length,
-    concludeTasksCount: tasks.filter((task) => task.concluded).length,
+    createdTasksCount: tasks.filter((task) => task.state === TaskState.Created).length,
+    concludedTasksCount: tasks.filter((task) => task.concluded).length,
   }
 }
