@@ -1,8 +1,14 @@
+import React from 'react'
+import { delay } from '../helpers/utils'
 import { TASKS_KEY, TaskState, type Task } from '../models/task'
 import useLocalStorage from './use-local-storage'
 
 export default function useTask() {
   const [tasks, setTasks] = useLocalStorage<Task[]>(TASKS_KEY, [])
+
+  const [isUpdatingTask, setIsUpdatingTask] = React.useState(false)
+
+  const [isDeletingTask, setIsDeletingTask] = React.useState(false)
 
   function prepareTask() {
     setTasks([
@@ -15,22 +21,35 @@ export default function useTask() {
     ])
   }
 
-  function updateTask(id: string, payload: { title: Task['title'] }) {
+  async function updateTask(id: string, payload: { title: Task['title'] }) {
+    setIsUpdatingTask(true)
+
+    await delay(1000)
+
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, state: TaskState.Created, ...payload } : task,
       ),
     )
+
+    setIsUpdatingTask(false)
   }
 
-  function updateTaskStatus(id: string, concluded: boolean) {
+  async function updateTaskStatus(id: string, concluded: boolean) {
+    await delay(1000)
     setTasks(tasks.map((task) => (task.id === id ? { ...task, concluded } : task)))
   }
 
-  function deleteTask(id: string) {
+  async function deleteTask(id: string) {
+    setIsDeletingTask(true)
+
+    await delay(1000)
+
     // Faz um filtro de tudo que é != do id passado, ou seja, cria um array filtrado
     // excluindo o id passado, e salvando o novo array
     setTasks(tasks.filter((task) => task.id !== id))
+
+    setIsDeletingTask(false)
   }
 
   return {
@@ -38,6 +57,8 @@ export default function useTask() {
     updateTask,
     updateTaskStatus,
     deleteTask,
+    isUpdatingTask,
+    isDeletingTask,
   }
 }
 

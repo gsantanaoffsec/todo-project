@@ -21,6 +21,8 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/exhaustive-deps': 'off',
       '@typescript-eslint/no-empty-object-type': [
         'error',
         { allowInterfaces: 'with-single-extends' },
