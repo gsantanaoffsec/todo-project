@@ -114,7 +114,12 @@ export default function TaskItem({ task, loading }: TaskItemProps) {
               variant="secondary"
               onClick={handleExitEditTask}
             />
-            <ButtonIcon type="submit" icon={CheckIcon} variant="primary" handling={isUpdatingTask} />
+            <ButtonIcon
+              type="submit"
+              icon={CheckIcon}
+              variant="primary"
+              handling={isUpdatingTask}
+            />
           </div>
         </form>
       )}
